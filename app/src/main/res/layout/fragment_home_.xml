@@ -48,7 +48,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/UserNametxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Welcome,David Milan"
@@ -68,15 +68,15 @@
                     android:textColor="#38E214"
                     app:layout_constraintEnd_toStartOf="@+id/startbtn"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                    app:layout_constraintStart_toStartOf="@+id/UserNametxt"
+                    app:layout_constraintTop_toBottomOf="@+id/UserNametxt" />
 
                 <ImageButton
                     android:id="@+id/startbtn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
+                    app:layout_constraintBottom_toBottomOf="@+id/manual_but"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.666"
                     app:layout_constraintStart_toEndOf="@+id/profile_image"
@@ -141,9 +141,9 @@
 
                 <com.example.geopunch.SlideToActView
                     android:id="@+id/sliderbut"
-                    android:layout_width="250dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
-    
+                    android:layout_margin="7dp"
                     android:elevation="6dp"
                     app:animation_duration="1"
                     app:area_margin="4dp"
@@ -157,34 +157,313 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintVertical_bias="0.0"
                     app:outer_color="@color/white"
-                    app:slider_height="60dp"
+                    app:slider_height="50dp"
                     app:slider_locked="false"
                     app:text="       Check in >>"
-                    app:text_size="25sp"
+                    app:text_size="19sp"
                     app:text_style="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/near_text"
+                        android:text="Nearest Offsite locations"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sliderbut"
+                        app:layout_constraintVertical_bias="0.0"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/near_text"
+                        app:layout_constraintVertical_bias="0.0"
+                        >
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="15dp"
                         android:elevation="2dp"
                         android:layout_margin="4dp"
                         android:background="#EBE5E5"
-                        app:layout_constraintBottom_toTopOf="@+id/sliderbut"
+                        app:cardCornerRadius="15dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="centerCrop"
+
+                                android:src="@mipmap/loc_image"  />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="start">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/location_name"
+                                    android:text="Location 1"
+                                    android:textStyle="bold"
+
+                                    android:textSize="20sp"
+                                    android:gravity="center"
+                                    android:layout_gravity="start"
+                                    android:layout_margin="10dp"/>
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="center"
+                                    android:text="1.5 km away"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:layout_margin="4dp"
+                        android:background="#EBE5E5"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0">
+                        app:layout_constraintTop_toBottomOf="@id/sliderbut">
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recycler_view"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="centerCrop"
+
+                                android:src="@mipmap/loc_image"  />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="start">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="Location 2"
+                                    android:textStyle="bold"
+
+                                    android:textSize="20sp"
+                                    android:gravity="center"
+                                    android:layout_gravity="start"
+                                    android:layout_margin="10dp"/>
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="center"
+                                    android:text="2.1 km away"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
 
 
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </androidx.cardview.widget.CardView>
-                    
-                    
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:layout_margin="4dp"
+                        android:background="#EBE5E5"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sliderbut">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="centerCrop"
+
+                                android:src="@mipmap/loc_image"  />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="start">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="Location 3"
+                                    android:textStyle="bold"
+
+                                    android:textSize="20sp"
+                                    android:gravity="center"
+                                    android:layout_gravity="start"
+                                    android:layout_margin="10dp"/>
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="center"
+                                    android:text="2.5 km away"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:layout_margin="4dp"
+                        android:background="#EBE5E5"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sliderbut">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="centerCrop"
+
+                                android:src="@mipmap/loc_image" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="start">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="Location 4"
+                                    android:textStyle="bold"
+
+                                    android:textSize="20sp"
+                                    android:gravity="center"
+                                    android:layout_gravity="start"
+                                    android:layout_margin="10dp"/>
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="center"
+                                    android:text="3.5 km away"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:cardCornerRadius="15dp"-->
+<!--                        android:elevation="2dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:background="#EBE5E5"-->
+<!--                        app:layout_constraintBottom_toTopOf="@+id/sliderbut"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintVertical_bias="0.0">-->
+
+<!--                        <androidx.recyclerview.widget.RecyclerView-->
+<!--                            android:id="@+id/recycler_view"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"/>-->
+
+
+<!--                    </androidx.cardview.widget.CardView>-->
+
+
 
 
 

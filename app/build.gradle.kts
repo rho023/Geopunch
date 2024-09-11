@@ -50,5 +50,12 @@ dependencies {
     implementation (libs.androidx.fragment.ktx)
     implementation (libs.circleimageview)
     implementation(libs.androidx.recyclerview)
+    implementation (libs.toggle)
+    implementation (libs.face.detection)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+
+
 
 }

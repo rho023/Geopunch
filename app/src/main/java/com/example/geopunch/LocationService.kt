@@ -43,7 +43,7 @@ class LocationService : Service() {
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 locationResult.lastLocation?.let { location ->
-                    checkDistanceFromTarget(location.latitude, location.longitude)
+//                    checkDistanceFromTarget(location.latitude, location.longitude)
                 }
             }
         }
@@ -140,25 +140,25 @@ ActivityCompat.checkSelfPermission(): Checks if the app has the required locatio
 fusedLocationClient.requestLocationUpdates(): Requests location updates using the specified LocationRequest and LocationCallback.
      */
 
-    private fun checkDistanceFromTarget(latitude: Double, longitude: Double) {
-        val distance = FloatArray(1)
-        Location.distanceBetween(
-            latitude, longitude,
-            targetLatLng.latitude, targetLatLng.longitude,
-            distance
-        )
-
-        if (distance[0] > radius) {
-            sendNotification("You have moved outside the 50-meter radius!")
-        }
-
-        // Broadcast the location to MainActivity
-        val intent = Intent("LOCATION_UPDATE").apply {
-            putExtra("latitude", latitude)
-            putExtra("longitude", longitude)
-        }
-        sendBroadcast(intent)
-    }
+//    private fun checkDistanceFromTarget(latitude: Double, longitude: Double) {
+//        val distance = FloatArray(1)
+//        Location.distanceBetween(
+//            latitude, longitude,
+//            targetLatLng.latitude, targetLatLng.longitude,
+//            distance
+//        )
+//
+//        if (distance[0] > radius) {
+//            sendNotification("You have moved outside the 50-meter radius!")
+//        }
+//
+//        // Broadcast the location to MainActivity
+//        val intent = Intent("LOCATION_UPDATE").apply {
+//            putExtra("latitude", latitude)
+//            putExtra("longitude", longitude)
+//        }
+//        sendBroadcast(intent)
+//    }
 
     @SuppressLint("NotificationPermission")
     private fun sendNotification(message: String) {

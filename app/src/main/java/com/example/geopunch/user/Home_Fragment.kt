@@ -23,10 +23,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentContainerView
-import com.example.geopunch.CHANNEL_ID
-import com.example.geopunch.MainActivity
+
+import com.example.geopunch.user.MainActivity
 import com.example.geopunch.R
 import com.example.geopunch.SlideToActView
+import com.example.geopunch.user.GeofenceBroadcastReceiver.Companion.CHANNEL_ID
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingClient

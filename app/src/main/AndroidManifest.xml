@@ -50,12 +50,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <service
-            android:name=".user.LocationService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="location"
-            tools:ignore="ForegroundServicePermission" />
+
 
         <receiver android:name=".user.GeofenceBroadcastReceiver" />
     </application>

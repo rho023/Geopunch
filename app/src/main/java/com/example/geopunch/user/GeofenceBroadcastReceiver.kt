@@ -204,6 +204,16 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
             status = "Not Working"
             //  Toast.makeText(this, "Status changed to $status", Toast.LENGTH_SHORT).show()
         }
+    data class Entry(
+        val EntryId: String,
+        val ExitTime: Timestamp?,
+        val EntryTime: Timestamp,
+        val Status:String,
+        val Date: String,
+        val latLng: LatLng,
+        val OfficeLocation:String,
+        val mode:String
+    )
     }
 
 

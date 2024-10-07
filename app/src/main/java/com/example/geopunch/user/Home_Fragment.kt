@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -25,8 +24,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentContainerView
 import com.example.geopunch.CHANNEL_ID
-import com.example.geopunch.GeofenceBroadcastReceiver
-import com.example.geopunch.Home_Fragment
 import com.example.geopunch.MainActivity
 import com.example.geopunch.R
 import com.example.geopunch.SlideToActView

@@ -3,22 +3,31 @@ agp = "8.5.0-beta01"
 cameraCamera2 = "1.3.4"
 circumnavigate = "3.1.0"
 faceDetection = "16.1.7"
+firebaseBom = "33.4.0"
 fragmentKtx = "1.8.2"
+fragmentKtxVersion = "1.6.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
+lottie = "6.4.0"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
+materialVersion = "1.9.0"
 playServicesMaps = "19.0.0"
 playServicesLocation = "21.3.0"
 recyclerview = "1.3.2"
+recyclerviewVersion = "1.2.1"
 slidetoact = "0.11.0"
+swiperefreshlayout = "1.1.0"
 switchButton = "0.0.3"
 toggle = "1.1.0"
+googleGmsGoogleServices = "4.4.2"
+firebaseFirestore = "25.1.0"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCamera2" }
@@ -26,24 +35,34 @@ androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", versi
 androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraCamera2" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-fragment-ktx-v160 = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtxVersion" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-recyclerview-v121 = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerviewVersion" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circumnavigate" }
 circumnavigate = { module = "de.hdodenhof:circumnavigate", version.ref = "circumnavigate" }
 face-detection = { module = "com.google.mlkit:face-detection", version.ref = "faceDetection" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material-v190 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 slidetoact = { module = "com.ncorti:slidetoact", version.ref = "slidetoact" }
 switch-button = { module = "com.github.zcweng:switch-button", version.ref = "switchButton" }
 toggle = { module = "com.github.angads25:toggle", version.ref = "toggle" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

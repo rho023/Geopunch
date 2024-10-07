@@ -1,10 +1,16 @@
 package com.example.geopunch
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextClock
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 //
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +42,71 @@ class Profile_Fragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val setHours = view.findViewById<ImageButton>(R.id.hrs)
+        setHours.setOnClickListener {
+            showCustomDialog()
+        }
+    }
+
+    private fun showCustomDialog() {
+        // Inflate the dialog layout
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_custom, null)
+
+        // Create and configure the dialog
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(dialogView)
+
+        // Set up the close button
+        val closeButton = dialogView.findViewById<Button>(R.id.dialog_button)
+        closeButton.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        // Show the dialog
+        dialog.show()
+        val clock1 = dialogView.findViewById<TextClock>(R.id.text_clock)
+        val clock2 = dialogView.findViewById<TextClock>(R.id.text_clock2)
+
+        clock1.setOnClickListener {
+            val picker = MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .setHour(12)
+                .setMinute(0)
+                .setTitleText("Select Appointment time")
+                .build()
+
+            picker.show(parentFragmentManager, "tag")
+
+            picker.addOnPositiveButtonClickListener {
+                val hour = picker.hour
+                val minute = picker.minute
+                val selectedTime = String.format("%02d:%02d", hour, minute)
+                clock1.text = selectedTime
+            }
+        }
+
+        clock2.setOnClickListener {
+            val picker = MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .setHour(12)
+                .setMinute(0)
+                .setTitleText("Select Appointment time")
+                .build()
+
+            picker.show(parentFragmentManager, "tag")
+
+            picker.addOnPositiveButtonClickListener {
+                val hour = picker.hour
+                val minute = picker.minute
+                val selectedTime = String.format("%02d:%02d", hour, minute)
+                clock2.text = selectedTime
+            }
+        }
+    }
+
 
     companion object {
         /**

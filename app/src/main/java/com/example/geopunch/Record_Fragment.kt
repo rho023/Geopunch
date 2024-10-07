@@ -43,10 +43,7 @@ class Record_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val manu: Button = view.findViewById(R.id.manual)
-        manu.setOnClickListener {
-            val bottomSheetFragment = BottomSheetFragment()
-            bottomSheetFragment.show(parentFragmentManager,bottomSheetFragment.tag)
-        }
+
 
 
     }

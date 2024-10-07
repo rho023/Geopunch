@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
+
 }
+
 
 android {
     namespace = "com.example.geopunch"
@@ -44,18 +47,22 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.database)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.androidx.fragment.ktx)
+    implementation (libs.material.v190)
+    implementation (libs.androidx.fragment.ktx.v160)
     implementation (libs.circleimageview)
-    implementation(libs.androidx.recyclerview)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
     implementation (libs.toggle)
-    implementation (libs.face.detection)
-    implementation (libs.androidx.camera.camera2)
-    implementation (libs.androidx.camera.lifecycle)
-    implementation (libs.androidx.camera.view)
-
+    implementation (libs.androidx.recyclerview.v121)
+    implementation (libs.lottie)
+    implementation (libs.androidx.swiperefreshlayout)
 
 
 }

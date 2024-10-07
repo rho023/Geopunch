@@ -124,6 +124,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Check In"
+            android:textSize="18dp"
+            android:layout_margin="10dp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
